@@ -8,6 +8,8 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 import matplotlib
 import matplotlib.pyplot as plt
 from IPython import display
+import pywintypes
+import win32api
 
 
 # # 去背神器 (pytorch)
@@ -25,7 +27,7 @@ import os
 import cv2
 os.environ['TRIDENT_BACKEND'] = 'pytorch'
 
-#!pip install tridentx --upgrade
+get_ipython().system('pip install tridentx --upgrade')
 import trident as T
 from trident import *
 from trident.models import efficientnet,deeplab
@@ -89,9 +91,6 @@ deeplabv3.preprocess_flow=backbond_net.preprocess_flow
 
 
 #deeplabv3.load_model('Models/deeplab_seg.pth.tar')
-
-# deeplabv3.model.backbond2[7].trainable=True
-
 deeplabv3.model.trainable=True
 deeplabv3.model.backbond1.trainable=False
 deeplabv3.model.backbond2.trainable=False
@@ -110,7 +109,7 @@ deeplabv3.model.backbond2.trainable=False
 
 
 
-deeplabv3.with_optimizer(optimizer='Ranger',lr=1e-4,betas=(0.7, 0.999))    .with_loss(DiceLoss)    .with_loss(CrossEntropyLoss(),loss_weight=4)    .with_loss(IoULoss,0.5,start_epoch=3)    .with_loss(FocalLoss,start_epoch=5)    .with_metric(pixel_accuracy,name='pixel_accuracy')    .with_metric(iou,name='iou')    .with_regularizer('l2',reg_weight=1e-6)    .with_constraint('min_max_norm')    .with_learning_rate_scheduler(reduce_lr_on_plateau,monitor='iou',mode='max',factor=0.5,patience=1,cooldown=1,threshold=5e-5,warmup=0)    .with_model_save_path('Models/deeplab_seg.pth')    .with_callbacks(SegTileImageCallback(100,reverse_image_transform=data_provider.reverse_image_transform,background=(255,128,255)))    .with_automatic_mixed_precision_training()
+deeplabv3.with_optimizer(optimizer='Ranger',lr=1e-3,betas=(0.7, 0.999))    .with_loss(DiceLoss)    .with_loss(CrossEntropyLoss(),loss_weight=4)    .with_loss(IoULoss,0.5,start_epoch=3)    .with_loss(FocalLoss,start_epoch=5)    .with_metric(pixel_accuracy,name='pixel_accuracy')    .with_metric(iou,name='iou')    .with_regularizer('l2',reg_weight=1e-6)    .with_constraint('min_max_norm')    .with_learning_rate_scheduler(reduce_lr_on_plateau,monitor='iou',mode='max',factor=0.5,patience=1,cooldown=1,threshold=5e-5,warmup=0)    .with_model_save_path('Models/deeplab_seg.pth')    .with_callbacks(SegTileImageCallback(100,reverse_image_transform=data_provider.reverse_image_transform,background=(255,128,255)))    .with_automatic_mixed_precision_training()
 
 
 deeplabv3.summary()
@@ -136,7 +135,7 @@ deeplabv3.summary()
 # In[9]:
 
 
-plan=TrainingPlan()    .add_training_item(deeplabv3,name='deeplab')    .with_data_loader(data_provider)    .repeat_epochs(10)    .with_batch_size(16)    .print_progress_scheduling(20,unit='batch')    .display_loss_metric_curve_scheduling(frequency=100,unit='batch',imshow=True)    .save_model_scheduling(20,unit='batch')    #.with_tensorboard()\
+plan=TrainingPlan()    .add_training_item(deeplabv3,name='deeplab')    .with_data_loader(data_provider)    .repeat_epochs(20)    .with_batch_size(16)    .print_progress_scheduling(20,unit='batch')    .display_loss_metric_curve_scheduling(frequency=100,unit='batch',imshow=True)    .save_model_scheduling(20,unit='batch')    #.with_tensorboard()\
 
 #add_training_item加入要訓練的模型
 #with_data_loader加入數據提供者

@@ -31,8 +31,11 @@ import trident as T from trident import * '
     * with_loss(IouLoss,1)加入iou損失作為損失函數(類別層級) 直接針對iou優化
 
 
-* 使用epoch 10 後train最終結果
-![](https://i.imgur.com/kdKsssi.png)
+* 使用epoch 20 後train最終結果
+![](https://i.imgur.com/visjN6z.png)
+![](https://i.imgur.com/AGk16fG.png)
+
 ![](https://i.imgur.com/IDEaCwD.png)
-![](https://i.imgur.com/J9aQGKc.png)
+![](https://i.imgur.com/lNNCx2V.png)
+
 
