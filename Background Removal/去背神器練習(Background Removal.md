@@ -12,7 +12,7 @@ import trident as T from trident import * '
 ```
 
 
-## 在本次練習實作中，數據集將都會以原作者提供的Trident API來實現。本次使用的數據集是吳恩達創辦的supervisely所發布的人體分割數據集Supervisely Person，在我開發的trident api中可以透過關鍵字"people"下載，裡面附的是將原圖稍作縮小的精簡版，已經足以用來訓練本次模型。若是各位對於原始數據感興趣，您也可以到 https://supervise.ly/ 即可下載取得圖資。
+## 在本次練習實作中，數據集將都會以原作者提供的Trident API來實現。本次使用的數據集是吳恩達創辦的supervisely所發布的人體分割數據集Supervisely Person，在尹相志開發的trident api中可以透過關鍵字"people"下載，裡面附的是將原圖稍作縮小的精簡版，已經足以用來訓練本次模型。若是各位對於原始數據感興趣，您也可以到 https://supervise.ly/ 即可下載取得圖資。
 
 > 可以直接使用pip安裝trident pip install tridentx --upgrade
 
