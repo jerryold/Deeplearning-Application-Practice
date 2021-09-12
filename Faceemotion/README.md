@@ -23,3 +23,8 @@ tags: Artifical Intelligence Practice&Readme
 ## 檔案介紹
 * emotiondetect.py:可透過輸入照片的方式判斷,該圖片中的人情緒,年齡,膚色......等等相關資訊
 * cameradetection.py:可即時偵測攝影機當中的人情緒,若有新增其他偵測內容請自行去程式碼中更改
+
+## Demo影片
+
+https://user-images.githubusercontent.com/12774427/132973200-4c5b27ba-b686-46c4-adf1-cb8295eef138.mp4
+
