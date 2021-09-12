@@ -1,4 +1,5 @@
-The project is different practice for the deeplearning Application
+# The project is different practice for the deeplearning Application
+
 1.Activation Comparision-比較傳統&新生代的激活函數效果
 * 傳統:relu,leaky_relu,tanh,sigmoid
 * 新生代:selu,swish,mish,bert版的gelu
