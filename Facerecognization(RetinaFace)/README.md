@@ -38,7 +38,5 @@ conda install shapely
 
 ## Face Recognition
 * 資料庫裡的人臉特徵跟輸入照片進行比對，這邊使用 L2-Norm 來計算之間的距離。最後再設定 threshold，若 L2-Norm 距離大於 threshold 表示輸入照片不為資料庫裡的任何一個人；反之，L2-Norm 距離最小的人臉與輸入照片為同一個人。
-## Demo影片
-https://user-images.githubusercontent.com/12774427/132973166-619e5696-2bfb-4f06-9ae4-fa0117a13f18.mp4
 
 
