@@ -9,3 +9,5 @@
 3.Facerecognization(RetinaFace)-基於Retaina Face Model進行人臉辨識
 
 4.Faceemotion(Deepface)-基於Deepface進行人臉情緒辨識,並透Opencv_haarcascade偵測人臉特徵(內含圖片辨識和攝影機即時辨識)
+
+5.Faceemotion_MobileNetV2-基於Kaggle 提供的FER2013人臉訓練集,使用MobileNetV2框架進行進行人臉情緒辨識，並透Opencv_haarcascade偵測人臉特徵(圖片辯識)
