@@ -41,7 +41,6 @@ output_video_name: This is the name of the saved segmented video.
 https://user-images.githubusercontent.com/12774427/133398232-2214fe84-acc9-45fe-be2b-c9699e0ed6f2.mp4
 
 
-https://user-images.githubusercontent.com/12774427/133403520-a181c660-7dba-4050-ae03-44fbb751d7d5.mp4
 
 
 
